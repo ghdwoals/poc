@@ -18,7 +18,7 @@ int main(void) {
     int count = 0;                          // character counter
     int ch;                                 // input character
 
-    while ((ch = getchar()) != EOF) {
+    while ((ch = getchar()) != EOF && count < MAX_INPUT) {
         if (ch == '\n') {
             if (strlen(line) > longest_line_length) {
                 line[count] = '\0';
