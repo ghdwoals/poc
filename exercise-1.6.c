@@ -9,6 +9,8 @@
 **  that only columns 0 through 3 and columns 10 through 12 will be printed.
 **
 ** Columns must be entered in increasing order.
+**
+** gets() function is dangerous and should not be used.
 */
 
 #include <stdio.h>
@@ -83,7 +85,7 @@ void rearrange(char *output, char const *input, int n_columns,
         if (col + 1 < n_columns)
             nchars = columns[col + 1] - columns[col] + 1;
         else
-            nchars = len - columns[col + 1];
+            nchars = len - columns[col] + 1;
 
         // If there isn't room in the output array, only copy what will fit.
         if (output_col + nchars > MAX_INPUT - 1)

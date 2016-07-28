@@ -7,6 +7,8 @@
 **  number. The column numbers are paired and specify ranges of columns from
 **  the input line that are to be printed. For example, 0 3 10 12 -1 indicates
 **  that only columns 0 through 3 and columns 10 through 12 will be printed.
+**
+** gets() function is dangerous and should not be used.
 */
 
 #include <stdio.h>
