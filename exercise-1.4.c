@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_INPUT 1000
+#define MAX_INPUT 1001
 
 int main(void) {
     char longest_line[MAX_INPUT];           // array to store longest line
