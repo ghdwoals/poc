@@ -1,13 +1,13 @@
 /*
- * This program reads input lines from the standard input and prints each
- *  input line, followed by just some portions of the lines, to the standard
- *  output.
- *
- * The first input is a list of column numbers, which ends with a negative
- *  number. The column numbers are paired and specify ranges of columns from
- *  the input line that are to be printed. For example, 0 3 10 12 -1 indicates
- *  that only columns 0 through 3 and columns 10 through 12 will be printed.
- */
+** This program reads input lines from the standard input and prints each
+**  input line, followed by just some portions of the lines, to the standard
+**  output.
+**
+** The first input is a list of column numbers, which ends with a negative
+**  number. The column numbers are paired and specify ranges of columns from
+**  the input line that are to be printed. For example, 0 3 10 12 -1 indicates
+**  that only columns 0 through 3 and columns 10 through 12 will be printed.
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
