@@ -4,6 +4,12 @@
 **  braces that appear within comments, string literals, or character constants.
 */
 
+/*
+** Note that this program is not sophisticated enough (yet, anyway) to
+**  tell the user what lines any stray braces occur on. Maybe I will work on
+**  that in the future for practice.
+*/
+
 #include <stdio.h>
 
 /*
@@ -17,10 +23,12 @@
 
 int main(void) {
     int in_comment = 0;
-    int braces = 0;
-    int open_braces = 0;
-    int close_braces = 0;
-    int ch;
+    // generic variable to denote whether or not the brace is within quotes,
+    // comments, or preprocessor directives
+    int braces = 0;         // total number of relevant braces
+    int open_braces = 0;    // total number of opening braces
+    int close_braces = 0;   // total number of closing braces
+    int ch;                 // character from standard input
 
     while ((ch = getchar()) != EOF) {
         if (ch == '/') {
