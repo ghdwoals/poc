@@ -5,22 +5,30 @@
 */
 
 /*
+** Program was tested using this very source code as the input.
+*/
+
+/*
 ** Note that this program is not sophisticated enough (yet, anyway) to
 **  tell the user what lines any stray braces occur on. Maybe I will work on
 **  that in the future for practice.
 */
 
-#include <stdio.h>
-
 /*
+** For testing purposes, this comment contains a random brace.
 ** Random brace here: {
 */
 
-// Another: }
+// And another: }
+
+/*
+** Random preprocessor directives. Not actually used in the source code.
+*/
 
 #define BRACE   {
 #define BRACE2  '{'
 
+#include <stdio.h>
 int main(void) {
     int in_comment = 0;
     // generic variable to denote whether or not the brace is within quotes,
