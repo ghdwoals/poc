@@ -3,8 +3,8 @@
 */
 
 /*
-** Note that in his own solution, Reek gives a solution that exploits the fact
-**  that every even number after 2 is not a prime number.
+** Note that in his own solution, Reek's program exploits the fact that every
+**  even number after 2 is not a prime number.
 ** The solution here is far more "brute-force" in that it tests every number.
 */
 
