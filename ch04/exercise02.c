@@ -23,11 +23,12 @@ int main(void) {
         } else if (a == 2) {
             printf("%d is a prime number.\n", a);
             continue;
+        } else {
+            if (is_prime(a) == 1)
+                printf("%d is a prime number.\n", a);
+            else
+                printf("%d is not a prime number.\n", a);
         }
-        if (is_prime(a) == 1)
-            printf("%d is a prime number.\n", a);
-        else
-            printf("%d is not a prime number.\n", a);
     }
 
     return 0;
