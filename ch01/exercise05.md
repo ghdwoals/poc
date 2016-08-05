@@ -2,22 +2,15 @@ There have been troubles compiling and running Reek's modified code for his
 original rearrange program in Chapter 1. Running the program with different
 types of input led to varying outputs and a lot of segfaults.
 
-`1 3 5 10 -1
+<code>1 3 5 10 -1<br />
+This is a test line<br />
+Original input: This is a test line<br /> 
+Rearranged line: hisis a t</code>
 
-This is a test line
-
-Original input: This is a test line 
-
-Rearranged line: hisis a t`
-
-
-`3 1 5 10 -1
-
-This is a test line
-
-Original input: This is a test line
-
-Segmentation fault (core dumped)`
+<code>3 1 5 10 -1<br />
+This is a test line<br />
+Original input: This is a test line<br />
+Segmentation fault (core dumped)</code>
 
 
 `1 3 10 5 -1
