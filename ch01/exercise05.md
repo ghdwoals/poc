@@ -2,9 +2,9 @@ There have been troubles compiling and running Reek's modified code for his
 original rearrange program in Chapter 1. Running the program with different
 types of input led to varying outputs and a lot of segfaults.
 
-<code>1 3 5 10 -1<br />
-This is a test line<br />
-Original input: This is a test line<br /> 
+<code>1 3 5 10 -1<br>
+This is a test line<br>
+Original input: This is a test line<br> 
 Rearranged line: hisis a t</code>
 
 <code>3 1 5 10 -1<br />
