@@ -9,41 +9,40 @@ Original input: This is a test line
 Rearranged line: hisis a t
 ```
 
-<code>3 1 5 10 -1<br />
-This is a test line<br />
-Original input: This is a test line<br />
-Segmentation fault (core dumped)</code>
-
-
-`1 3 10 5 -1
-
+```
+3 1 5 10 -1
 This is a test line
-
 Original input: This is a test line
+Segmentation fault (core dumped)
+```
 
-Segmentation fault (core dumped)`
 
-
-`1 10 3 5 -1
-
+```
+1 3 10 5 -1
 This is a test line
-
 Original input: This is a test line
+Segmentation fault (core dumped)
+```
 
-Rearranged line: his is a ts i`
 
-
-`10 5 3 1 -1
-
+```
+1 10 3 5 -1
 This is a test line
-
 Original input: This is a test line
+Rearranged line: his is a ts i
+```
 
-Segmentation fault (core dumped)`
 
+```
+10 5 3 1 -1
+This is a test line
+Original input: This is a test line
+Segmentation fault (core dumped)
+```
 
-Not to mention that entering ranges in different orders (for example: 1 5 3 10
--1 and 5 10 1 3 -1) led to completely different outputs.
+You might have noticed that I didn't specifically enter *ranges* out of order.
+Note that I did test this, and entering ranges in different orders (for example:
+1 5 3 10 -1 and 5 10 1 3 -1) led to different outputs.
 
 Since I was somewhat confused on the original goal of the exercise, I decided
 to modify the whole thing. The objective is to "Modify the rearrange function
