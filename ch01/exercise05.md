@@ -2,12 +2,11 @@ There have been troubles compiling and running Reek's modified code for his
 original rearrange program in Chapter 1. Running the program with different
 types of input led to varying outputs and a lot of segfaults.
 
-`1 3 5 10 -1  
-This is a test line  
-Original input: This is a test line  
+`1 3 5 10 -1<br />
+This is a test line<br />  
+Original input: This is a test line<br />  
 Rearranged line: hisis a t`  
-
-
+<br /><br />
 `3 1 5 10 -1
 This is a test line
 Original input: This is a test line
@@ -28,8 +27,8 @@ This is a test line
 Original input: This is a test line
 Segmentation fault (core dumped)`
 
-Not to mention that entering ranges in different orders (IE 5 10 1 3 -1) led
-to completely different outputs.
+Not to mention that entering ranges in different orders (for example: 1 5 3 10
+-1 and 5 10 1 3 -1) led to completely different outputs.
 
 Since I was somewhat confused on the original goal of the exercise, I decided
 to modify the whole thing. The objective is to "Modify the rearrange function
