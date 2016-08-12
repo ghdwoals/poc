@@ -29,6 +29,7 @@ int main(void) {
         printf("The square root of %g is %g.\n", n, b);
         printf("Enter another number:\t");
     }
+    printf("Terminating program...\n");
 
     return 0;
 }
