@@ -6,7 +6,6 @@ Given a group of variables, their addresses, and their contents, determine their
 and that address arithmetic is based on 4-byte integers and pointers.
 
 The table is recreated below:
-
 VAR     |   ADDR    |   CONTENTS    |   VAR     |   ADDR    |   CONTENTS
 --------|-----------|---------------|-----------|-----------|-----------
 a       |   1040    |   1028        |   o       |   1096    |   1024
