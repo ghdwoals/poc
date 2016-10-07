@@ -24,8 +24,10 @@ n       |   1076    |   1056        |           |           |
 
 As a simple example, if variable <code>a</code> were an integer, its rvalue would be 1028 and its lvalue address at 1040.
 
-For every given expression, determine its rvalue and lvalue address, as given by the following table header:
+For every given expression, determine its rvalue and lvalue address. If illegal, specify so. The incomplete table, save for the first answer, and the expressions is shown first. Each expression's rvalues and lvalue addresses are explained. Finally, a completed table will be shown.
 
 EXPRESSION  | INT RVALUE | INT LVALUE ADDR | INT* RVALUE | INT* LVALUE ADDR
 ------------|------------|-----------------|-------------|-----------------
 (a) m       |   1008     |   1016          |   1008      |   1016
+(b) v + 1   |    |  |   |
+(c) j - 4   |
