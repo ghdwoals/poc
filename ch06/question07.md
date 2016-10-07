@@ -6,9 +6,8 @@ Given a group of variables, their addresses, and their contents, determine their
 and that address arithmetic is based on 4-byte integers and pointers.
 
 The table is recreated below:
-------------------------------------------------------------------------
 VAR     |   ADDR    |   CONTENTS    |   VAR     |   ADDR    |   CONTENTS
-------------------------------------------------------------------------
+--------|-----------|---------------|-----------|-----------|-----------
 a       |   1040    |   1028        |   o       |   1096    |   1024
 c       |   1056    |   1076        |   q       |   1084    |   1072
 d       |   1008    |   1016        |   r       |   1068    |   1048
@@ -21,7 +20,6 @@ j       |   1064    |   1000        |   x       |   1072    |   1080
 k       |   1044    |   1052        |   y       |   1048    |   1068
 m       |   1016    |   1008        |   z       |   2000    |   1000
 n       |   1076    |   1056        |           |           |
-------------------------------------------------------------------------
 
 As a simple example, if variable <code>a</code> were an integer, its rvalue would be 1028 and its lvalue address at 1040.
 
