@@ -31,3 +31,32 @@ EXPRESSION  | INT RVALUE | INT LVALUE ADDR | INT* RVALUE | INT* LVALUE ADDR
 (a) m       |   1008     |   1016          |   1008      |   1016
 (b) v + 1   |    |  |   |
 (c) j - 4   |
+(d) a - d   |
+(e) v - w   |
+(f) &c      |
+(g) &e + 1  |
+(h) &o - 4  |
+(i) &(f + 2)|
+(j) *g      |
+(k) *k + 1  |
+(l) *(n + 1)|
+(m) *h - 4  |
+(n) *(u + 4)|
+(o) *f - g  |
+(p) *f - *g |
+(q) *s - *q |
+(r) *(r - t)|
+(s) y > i   |
+(t) y > *i  |
+(u) *y > *i |
+(v) **h     |
+(w) c++     |
+(x) ++c     |
+(y) *q++    |
+(z) (*q)++  |
+(aa)    *++q|
+(bb)    ++*q|
+(cc)    *++*q|
+(dd)    ++*(*q)++|
+
+The
