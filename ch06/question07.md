@@ -56,7 +56,7 @@ EXPRESSION  | INT RVALUE | INT LVALUE ADDR | INT* RVALUE | INT* LVALUE ADDR
 (z) (*q)++  |
 (aa)    *++q|
 (bb)    ++*q|
-(cc)    *++*q|
-(dd)    ++*(*q)++|
+(cc)    **++**q|
+(dd)    ++**(**q)++|
 
 The
