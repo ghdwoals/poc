@@ -26,6 +26,7 @@ As a simple example, if variable <code>a</code> were an integer, its rvalue woul
 
 For every given expression, determine its rvalue and lvalue address, as given by the following table header:
 
-EXPRESSION  |   INT RVALUE  |   INT LVALUE ADDR |   INT* RVALUE |   INT* LVALUE ADDR
-------------------------------------------------------------------------------------
-a. m        |   1008        |   1016            |   1008        |   1016
+            |       INTEGERS            |       POINTERS TO INTEGERS
+EXPRESSION  |   RVALUE  |   LVALUE ADDR |   RVALUE  |   LVALUE ADDR
+------------|-----------|---------------|-----------|---------------
+a. m        |   1008    |   1016        |   1008    |   1016
