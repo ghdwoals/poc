@@ -59,11 +59,11 @@ EXPRESSION  | INT RVALUE | INT LVALUE ADDR | INT* RVALUE | INT* LVALUE ADDR
 (cc) ```*++*q```|
 (dd)```++*(*q)++```|
 
-First, let's use simple definitions of lvalue and rvalue from [Eli Bendersky] (http://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c). An lvalue: "represents an object that occupies some identifiable location in memory (i.e. has an address)". An rvalue "is an expression that does not represent an object occupying some identifiable location in memory".
+First, let's use simple definitions of lvalue and rvalue from [Eli Bendersky] (http://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c). An lvalue: "represents an object that occupies some identifiable location in memory (i.e. has an address)". An rvalue "is an expression that does not represent an object occupying some **identifiable** location in memory".
 
 (a) ```m```
 
-This one is fairly straightforward. If ```m``` is type int, its rvalue would be 1008, and its lvalue address would be at 1016. It is pretty easy to see that attempting to assign another (valid) value to ```m``` would be doable because its location is known. If ```m``` is ```int*```, its contents would be 1008 (the address it is pointing to), and its lvalue addr would be 1016. Again, because its address is clearly known, it can be changed.
+This one is fairly straightforward. If ```m``` is type ```int```, its rvalue would be 1008, and its lvalue address would be at 1016. It is pretty easy to see that attempting to assign another (valid) value to ```m``` would be doable because its location is known. If ```m``` is ```int*```, its contents would be 1008 (the address it is pointing to), and its lvalue addr would be 1016. Again, because its address is clearly known, it can be changed.
 
 
 (b) ```v + 1```
@@ -75,6 +75,8 @@ If ```v``` were an ```int*```, its rvalue would be 1040. Remember, we are workin
 (c) ```j - 4```
 
 Again, ```int j``` - 4 would be 996. And, again, ```j - 4``` would not represent a legal lvalue address. 
+
+
 
 
 
