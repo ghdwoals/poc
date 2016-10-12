@@ -1,7 +1,7 @@
 Given a group of variables, their addresses, and their contents, determine their rvalues and lvalues, and the addresses of their locations, if any (otherwise note their illegalities). Assume all variables are:
 
-(1) integers; then
-(2) pointers to integers,
+(1) integers (```int```); then
+(2) pointers to integers (```int *```),
 
 and that address arithmetic is based on 4-byte integers and pointers.
 
@@ -28,37 +28,49 @@ For every given expression, determine its rvalue and lvalue address. If illegal,
 
 EXPRESSION  | INT RVALUE | INT LVALUE ADDR | INT* RVALUE | INT* LVALUE ADDR
 ------------|------------|-----------------|-------------|-----------------
-(a) m       |   1008     |   1016          |   1008      |   1016
-(b) v + 1   |    |  |   |
-(c) j - 4   |
-(d) a - d   |
-(e) v - w   |
-(f) &c      |
-(g) &e + 1  |
-(h) &o - 4  |
-(i) &(f + 2)|
-(j) *g      |
-(k) *k + 1  |
-(l) *(n + 1)|
-(m) *h - 4  |
-(n) *(u + 4)|
-(o) *f - g  |
-(p) *f - *g |
-(q) *s - *q |
-(r) *(r - t)|
-(s) y > i   |
-(t) y > *i  |
-(u) *y > *i |
-(v) **h     |
-(w) c++     |
-(x) ++c     |
-(y) *q++    |
-(z) (*q)++  |
-(aa)    *++q|
-(bb)    ++*q|
+(a) ```m```       |   1008     |   1016          |   1008      |   1016
+(b) ```v + 1```   |    |  |   |
+(c) ```j - 4```   |
+(d) ```a - d```   |
+(e) ```v - w```   |
+(f) ```&c```      |
+(g) ```&e + 1```  |
+(h) ```&o - 4```  |
+(i) ```&(f + 2)```|
+(j) ```*g```      |
+(k) ```*k + 1```  |
+(l) ```*(n + 1)```|
+(m) ```*h - 4```  |
+(n) ```*(u + 4)```|
+(o) ```*f - g```  |
+(p) ```*f - *g``` |
+(q) ```*s - *q``` |
+(r) ```*(r - t)```|
+(s) ```y > i ```  |
+(t) ```y > *i ``` |
+(u) ```*y > *i``` |
+(v) ```**h   ```  |
+(w) ```c++```     |
+(x) ```++c  ```   |
+(y)``` *q++```    |
+(z) ```(*q)++``` |
+(aa)  ```*++q```|
+(bb)```++*q```|
 (cc) ```*++*q```|
 (dd)```++*(*q)++```|
 
-**(a) m
+First, let's use a simple definition of lvalue and rvalue from [Eli Bendersky] (http://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c). An lvalue: "represents an object that occupies some identifiable location in memory (i.e. has an address)". An rvalue "is an expression that does not represent an object occupying some identifiable location in memory".
 
-This one is fairly straightforward. If m is type int, its value would be 1008, and its address would be located at 1016. If m is of type int*, again, its value would be 1008 and its address would be 1016. Remember, we have not been asked to dereference anything. The contents of *m would merely be the address it is pointing to, which is 1008. The pointer itself is located at the address 1016.
+(a) ```m```
+
+This one is fairly straightforward. If ```m``` is type int, its rvalue would be 1008, and its lvalue address would be at 1016. It is pretty easy to see that attempting to assign another (valid) value to ```m``` would be doable because its location is known. If ```m``` is ```int*```, its contents would be 1008 (the address it is pointing to), and its lvalue addr would be 1016. Again, because its address is clearly known, it can be changed.
+
+
+(b) ```v + 1```
+
+The contents of ```v``` is 1036; adding 1 to ```v``` would give an rvalue of 1037. The expression ```v + 1```
+
+
+
+
+
