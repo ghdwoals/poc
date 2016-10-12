@@ -59,7 +59,14 @@ EXPRESSION  | INT RVALUE | INT LVALUE ADDR | INT* RVALUE | INT* LVALUE ADDR
 (cc) ```*++*q```|
 (dd)```++*(*q)++```|
 
-First, let's use simple definitions of lvalue and rvalue from [Eli Bendersky] (http://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c). An lvalue: "represents an object that occupies some identifiable location in memory (i.e. has an address)". An rvalue "is an expression that does not represent an object occupying some **identifiable** location in memory" [emphasis mine].
+First, let's use simple definitions of lvalue and rvalue from [Eli Bendersky] (http://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c). It would be advised to discuss what lvalues and rvalues are before answering the question. An lvalue: "represents an object that occupies some identifiable location in memory (i.e. has an address)". An rvalue "is an expression that does not represent an object occupying some **identifiable** location in memory" [emphasis mine]. To continue his example:
+
+<code>
+4 = var;        // ERROR!
+(var + 1) = 4;  // ERROR!
+</code>
+
+The above expressions are not legal lvalues because "both are temporary results of expressions, which don't have an identifiable memory location (i.e. they can just reside in some temporary register for the duration of the computation). Therefore, assigning to them makes no semantic sense - there's nowhere to assign to."
 
 (a) ```m```
 
