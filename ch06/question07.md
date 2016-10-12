@@ -59,7 +59,7 @@ EXPRESSION  | INT RVALUE | INT LVALUE ADDR | INT* RVALUE | INT* LVALUE ADDR
 (cc) ```*++*q```|
 (dd)```++*(*q)++```|
 
-First, let's use simple definitions of lvalue and rvalue from [Eli Bendersky] (http://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c). An lvalue: "represents an object that occupies some identifiable location in memory (i.e. has an address)". An rvalue "is an expression that does not represent an object occupying some **identifiable** location in memory".
+First, let's use simple definitions of lvalue and rvalue from [Eli Bendersky] (http://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c). An lvalue: "represents an object that occupies some identifiable location in memory (i.e. has an address)". An rvalue "is an expression that does not represent an object occupying some **identifiable** location in memory" [emphasis mine].
 
 (a) ```m```
 
@@ -74,7 +74,11 @@ If ```v``` were an ```int*```, its rvalue would be 1040. Remember, we are workin
 
 (c) ```j - 4```
 
-Again, ```int j``` - 4 would be 996. And, again, ```j - 4``` would not represent a legal lvalue address. 
+Again, ```int j``` - 4 would be 996. And, again, ```j - 4``` would not represent a legal lvalue address. If ```j``` is an ```int*```, ```j - 4``` would evaluate to an rvalue of 984. However, this would not be a legal lvalue, because the expression does not represent a valid identifiable address in memory.
+
+(d) ```a - d```
+
+As ```int```s, ```a - d``` evaluates to 12, but the expression cannot serve as a legal lvalue address. As ```int*```s, the expression evaluates to 3 [(1028 - 1016) / 4], but it is illegal to use as an lvalue address. 
 
 
 
