@@ -59,4 +59,6 @@ EXPRESSION  | INT RVALUE | INT LVALUE ADDR | INT* RVALUE | INT* LVALUE ADDR
 (cc) ```*++*q```|
 (dd)```++*(*q)++```|
 
-The
+**(a) m
+
+This one is fairly straightforward. If m is type int, its value would be 1008, and its address would be located at 1016. If m is of type int*, again, its value would be 1008 and its address would be 1016. Remember, we have not been asked to dereference anything. The contents of *m would merely be the address it is pointing to, which is 1008. The pointer itself is located at the address 1016.
