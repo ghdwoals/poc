@@ -70,7 +70,7 @@ This one is fairly straightforward. If ```m``` is type ```int```, its rvalue wou
 
 The contents of ```v``` is 1036; adding 1 to ```v``` would give an rvalue of 1037. This is straightforward. However, the expression ```v + 1``` does not represent a legal lvalue address. While ```v``` is a perfectly legal lvalue, because it represents a valid address, ```v + 1``` does not represent a valid address in memory, hence it is illegal.
 
-If ```v``` were an ```int*```, its rvalue would be 1040. Remember, we are working with a 4-byte ```int``` and ```int*```. However, the expression ```v + 1``` would not represent a valid lvalue address.
+If ```v``` were an ```int*```, its rvalue would be 1040. Remember, we are working with a 4-byte ```int``` and ```int*```. However, the expression ```v + 1``` would not represent a valid lvalue address because the expression does not represent some object that has an identifiable address.
 
 (c) ```j - 4```
 
@@ -80,7 +80,11 @@ Again, ```int j``` - 4 would be 996. And, again, ```j - 4``` would not represent
 
 As ```int```s, ```a - d``` evaluates to 12, but the expression cannot serve as a legal lvalue address. As ```int*```s, the expression evaluates to 3 [(1028 - 1016) / 4], but it is illegal to use as an lvalue address. 
 
+(e) ```v - w```
 
+```int```: ```v - w``` == 1036 - 1060 == -24. No legal representation as an lvalue address. As ```int*```s, -24/6 = -4 == rvalue. Again, the expression ```v - w``` does not represent an identifiable location in memory.
+
+(f)
 
 
 
