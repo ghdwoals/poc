@@ -25,9 +25,7 @@ k       |   1044    |   1052        |   y       |   1048    |   1068
 m       |   1016    |   1008        |   z       |   2000    |   1000
 n       |   1076    |   1056        |           |           |
 
-As a simple example, if variable ```a``` were an integer, its rvalue would be 1028 and its lvalue address at 1040.
-
-For every given expression, determine its rvalue and lvalue address. If illegal, specify so. The incomplete table, save for the first answer, and the expressions is shown first. Each expression's rvalues and lvalue addresses are explained. Finally, a completed table will be shown.
+As a simple example, if variable ```m``` were an integer, its rvalue would be 1008 and its lvalue address at 1016. The incomplete table, save for the first answer, and the expressions is shown first, followed by the answers and any necessary explanations. Finally, a completed table will be shown.
 
 EXPRESSION  | INT RVALUE | INT LVALUE ADDR | INT* RVALUE | INT* LVALUE ADDR
 ------------|------------|-----------------|-------------|-----------------
