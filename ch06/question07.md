@@ -68,3 +68,22 @@ First, let's use simple definitions of lvalue and rvalue from [Eli Bendersky] (h
 ```
 
 The above expressions are not legal lvalues because "both are temporary results of expressions, which don't have an identifiable memory location (i.e. they can just reside in some temporary register for the duration of the computation). Therefore, assigning to them makes no semantic sense - there's nowhere to assign to."
+
+In addition to the above, for programming newbs like myself, it is easier to remember that an expression can be a legal lvalue or represent a legal lvalue address if it can be assigned to (that is, can it exist on the left-hand side of an assignment operator?). Consider an rvalue to be a legal evaluation of an expression.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
