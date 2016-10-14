@@ -1,7 +1,7 @@
 NOTE: This page is not yet complete.
 
 Question:
-Given a group of variables, their addresses, and their contents, determine their rvalues, then find its lvalue (giving the address of the location it specifies, if any). Otherwise, note their illegalities. Assume all variables are:
+Given a group of variables, their addresses, and their contents, determine their rvalues, if any, and then determine their lvalues and give the addresses of the locations they specify, if any. Otherwise, note their illegalities. Assume all variables are:
 
 (1) integers (```int```); then
 (2) pointers to integers (```int *```),
