@@ -1,4 +1,7 @@
-Given a group of variables, their addresses, and their contents, determine their rvalues and lvalues, and the addresses of their locations, if any (otherwise note their illegalities). Assume all variables are:
+NOTE: This page is not yet complete.
+
+Question:
+Given a group of variables, their addresses, and their contents, determine their rvalues, then find its lvalue (giving the address of the location it specifies, if any). Otherwise, note their illegalities. Assume all variables are:
 
 (1) integers (```int```); then
 (2) pointers to integers (```int *```),
@@ -85,17 +88,135 @@ Again, ```int j``` - 4 would be 996. And, again, ```j - 4``` would not represent
 
 (d) ```a - d```
 
-As ```int```s, ```a - d``` evaluates to 12, but the expression cannot serve as a legal lvalue address. As ```int*```s, the expression evaluates to 3 [(1028 - 1016) / 4], but it is illegal to use as an lvalue address. 
+As an ```int```, ```a - d``` evaluates to 12, but the expression cannot serve as a legal lvalue address. As an ```int*```, the expression evaluates to 3 [(1028 - 1016) / 4], but it is illegal to use as an lvalue address. 
 
 (e) ```v - w```
 
 ```int```: ```v - w``` == 1036 - 1060 == -24. No legal representation as an lvalue address. As ```int*```s, -24/6 = -4 == rvalue. Again, the expression ```v - w``` does not represent an identifiable location in memory.
 
-(f)
+(f) ```&c```
 
+```&``` is an address operator.
 
+```int```: rvalue = 1056. Illegal lvalue address. It would perhaps be unwise to allow one to manipulate the address of some variable.
 
+```int*```: rvalue = 1056. Again, there is no legal use as an lvalue.
 
+(g) ```&e + 1```
 
+```int```: rvalue = 1036. Since we are dealing with addresses and 4-byte integers, 4 is added to the original address. No legal lvalue.
 
+```int*```: rvalue = 1036. lvalue address = illegal.
 
+(h) ```&o - 4```
+
+```int```: rvalue = 1080. lvalue address = illegal.
+```int*```: rvalue = 1080. lvalue address = illegal.
+
+(i) ```&(f + 2)```
+
+In this case, all of the rvalues and lvalues are illegal. Think of it this way with ```f``` as an ```int```. What we are essentially asking the program to do is add 2 to ```f``` (for a sum of 1054) and then go to the address of this transient value.
+
+(j) ```*g```
+
+Since ```int``` cannot be dereferenced, ```*g``` is illegal both as an rvalue and lvalue. However, as an ```int*```, it is legal in both cases. As an rvalue, the value of ```*g``` is fairly obvious. We dereference the address pointed to by ```g```, which is 1064. Therefore, the rvalue is 1000. Since ```g``` is pointing at a legitimate address in memory, the contents of what ```g``` is pointing to can be manipulated. ```g``` points to address 1064.
+
+(k) ```*k + 1```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = 1045. lvalue address = illegal; operation cannot be to a fixed address.
+
+(l) ```*(n + 1)```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = 1012. As for ```*(n + 1)```'s lvalue address, because it happens to represent an actual address, in this case it may be used legally. Its lvalue is 1060.
+
+(m) ```*h - 4```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = 1076. lvalue address = illegal.
+
+(n) ```*(u - 4)```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = 1056. lvalue address = 1076.
+
+(o) ```*f - g```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = illegal. lvalue address = illegal. You cannot subtract a pointer's contents (address) from a dereferenced pointer.
+
+(p) ```*f - *g```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = 52. lvalue address = illegal.
+
+(q) ```*s - *q```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = -80. lvalue address = illegal.
+
+(r) ```*(r - t)```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = illegla. lvalue address = illegal.
+
+(s) ```y > i```
+
+```int```: rvalue: 0 (remember "falsity" and "truthhood" in C). lvalue address = illegal.
+```int*```: rvalue = 0. lvalue address = illegal.
+
+(t) ```y > *i```
+
+```int```: rvalue = illegal (illegal comparison). lvalue address = illegal.
+```int*```: rvalue = illegal (illegal comparison). lvalue address = illegal.
+
+(u) ```*y > *i```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = 1. lvalue address = illegal.
+
+(v) ```**h```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = 1080. lvalue address = 1020.
+
+(w) ```c++```
+
+```int```: rvalue = 1076 (remember, this is postfix increment operator). lvalue address = illegal.
+```int*```: rvalue = 1076. lvalue address = illegal.
+
+(x) ```++c```
+
+```int```: rvalue = 1077. lvalue address = illegal.
+```int*```: rvalue = 1080. lvalue address = illegal.
+
+(y) ```*q++```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = 1080. lvalue address = 1072.
+
+(z) ```(*q)++```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = 1080. lvalue address = illegal. This expression differs from (y) in that the parentheses force dereferencing first. The indirection operator provides an integer value. This expression cannot serve as a legal lvalue, because its evaluation does not persist. In (y), the postfix incrementation actually has higher precedence and, thus, occurs first. In (y), ```q``` points to a known address, which is incremented after.
+
+(aa) ```*++q```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = 1056. lvalue address = 1076.
+
+(bb) ```++*q```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = 1081. lvalue address = illegal. Again, the indirection operator forces dereferencing to occur first. However, the value of this expression cannot be used as a valid lvalue address. Applying indirection on ```q``` gives us an integer value (incremented or not), not a valid address. This is in contrast to (aa), where ```q``` continues to point to an address and indirection applied after incrementation.
+
+(cc) ```*++*q```
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = 1072. lvalue address = 1084.
+
+(dd) ```++*(*q)++``` 
+
+```int```: rvalue = illegal. lvalue address = illegal.
+```int*```: rvalue = 1021. lvalue address = illegal.
