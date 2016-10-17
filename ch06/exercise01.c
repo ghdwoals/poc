@@ -2,6 +2,7 @@
 ** Write a function that will search a string for any one of a given set of
 **  characters. Your function should match this prototype:
 */
+
 char *find_char(char const *source, char const *chars);
 
 /*
