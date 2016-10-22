@@ -29,8 +29,8 @@ int del_substr(char *str, char const *substr);
 **      initial for loop to keep them in mind.
 **
 ** Compiled and tested this on a CentOS 7 box, along with a simple test.c file.
-**      The test file used in conjunection with this source file uses fgets() to
-**      obtain the relevant strings.
+**      The test file used in conjunction with this source file uses scanf() to
+**      obtain relevant strings.
 */
 
 int del_substr(char *str, char const *substr) {
@@ -42,11 +42,7 @@ int del_substr(char *str, char const *substr) {
     int strlen_ = 0;
     int substrlen = 0;
 
-    while (*(str + strlen_) != '\0') {
-        if (*(str + strlen_) == '\n' && *(str + strlen_ + 1) == '\0')
-            *(str + strlen_) = '\0';
-        strlen_++;
-    }
+    while (*(str + strlen_) != '\0') strlen_++;
 
     while (*(substr + substrlen) != '\0') substrlen++;
 
@@ -64,12 +60,10 @@ int del_substr(char *str, char const *substr) {
                 endaddr++;
                 j++;
                 if (*(str + endaddr) != *(substr + j)) {
-                    if (*(substr + j) != '\n') {
+                    if (*(substr + j) != '\n' && *(substr + j) != '\0') {
                         flag = 0;
                         break;
                     }
-                    else if (*(substr + j) == '\n' && *(substr + j + 1) == '\0')
-                        break;
                 }
             }
         }
