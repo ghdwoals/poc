@@ -38,7 +38,7 @@ void reverse_string(char *string) {
     while (*(string + str_len) != '\0') 
         str_len++;
 
-    for (i = 0, str_len -= 1; i < str_len; i++, str_len--) {
+    for (i = 0, str_len -= 1; str_len > i; i++, str_len--) {
         temp = *(string + i);
         *(string + i) = *(string + str_len);
         *(string + str_len) = temp;
