@@ -26,7 +26,7 @@ int del_substr(char *str, char const *substr);
 ** This problem really gave me some trouble initially. After five hours (and a
 **      very liberal sprinkling of "diagnostic" printf statements), I finally
 **      remembered that newlines are characters, too. Thus, I had to modify the
-**      initial for loop to keep them in mind.
+**      initial for loop to keep them in mind (relevant for use with fgets()).
 **
 ** Compiled and tested this on a CentOS 7 box, along with a simple test.c file.
 **      The test file used in conjunction with this source file uses scanf() to
