@@ -40,7 +40,11 @@ int del_substr(char *str, char const *substr) {
     int strlen_ = 0;
     int substrlen = 0;
 
-    while (*(str + strlen_) != '\0') strlen_++;
+    while (*(str + strlen_) != '\0') {
+        if (*(str + strlen_) == '\n' && *(str + strlen_ + 1) == '\0')
+            *(str + strlen_) = '\0';
+        strlen_++;
+    }
 
     while (*(substr + substrlen) != '\0') substrlen++;
 
