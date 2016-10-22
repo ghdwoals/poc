@@ -23,8 +23,8 @@ void reverse_string(char *string);
  */
 
 /*
- * Function tested in conjunction with simple test.c program using scanf()
- * to obtain string.
+ * Function tested on a CentOS 7 box in conjunction with simple test.c program
+ * using scanf() to obtain string.
  */
 
 void reverse_string(char *string) {
