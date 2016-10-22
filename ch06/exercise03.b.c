@@ -24,6 +24,9 @@ void reverse_string(char *string) {
     char *end;
     char temp;
 
+    if (string == 0 || *string == '\0')
+        return;
+
     for (end = string; *end != '\0'; end++)
         ;
 
