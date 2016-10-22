@@ -37,19 +37,19 @@ int del_substr(char *str, char const *substr) {
     int flag = 0;
     int i;
     int j;
-    int strlen = 0;
+    int strlen_ = 0;
     int substrlen = 0;
 
-    while (*(str + strlen) != '\0') strlen++;
+    while (*(str + strlen_) != '\0') strlen_++;
 
     while (*(substr + substrlen) != '\0') substrlen++;
 
-    if (strlen < substrlen) {
+    if (strlen_ < substrlen) {
         printf("Substring cannot be longer than the original string!\n");
         return flag;
     }
 
-    for (i = 0; i < strlen; i++) {
+    for (i = 0; i < strlen_; i++) {
         if (*(str + i) == *substr) {
             startaddr = endaddr = i;
             flag = 1;
@@ -67,10 +67,11 @@ int del_substr(char *str, char const *substr) {
                 }
             }
         }
+        if (flag)       break;
     }
 
     if (flag) {
-        for (i = 0, j = endaddr; i < strlen || *(str + j) != '\0'; i++) {
+        for (i = 0, j = endaddr; i < strlen_ || *(str + j) != '\0'; i++) {
             if (i < startaddr)  continue;
             else if (i >= startaddr) {
                 *(str + i) = *(str + j);
