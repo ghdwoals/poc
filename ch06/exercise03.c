@@ -22,6 +22,11 @@ void reverse_string(char *string);
  * is found in exercise03.b.c.
  */
 
+/*
+ * Function tested in conjunction with simple test.c program using scanf()
+ * to obtain string.
+ */
+
 void reverse_string(char *string) {
     char temp;
     int str_len = 0;

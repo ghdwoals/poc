@@ -15,6 +15,11 @@ void reverse_string(char *string);
  * No trailing newline.
  */
 
+/* 
+ * Function tested in conjunction with simple test.c program using scanf()
+ * to obtain string.
+ */
+
 void reverse_string(char *string) {
     char *end;
     char temp;
