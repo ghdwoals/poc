@@ -10,10 +10,10 @@
 
 #define MAX 1000
 
-void array(int *isprime, int i, int j);
+void isprime(bool *sieve, int i, int j);
 
 int main(void) {
-    int sieve[MAX];
+    bool sieve[MAX];
     int numbers[MAX];
     int i;
     int j;
@@ -28,7 +28,7 @@ int main(void) {
         *(numbers + i) = j;
 
     for (i = 0, j = 2; i < MAX; i++, j++)
-        array(sieve, i, j);
+        isprime(sieve, i, j);
 
     for (i = 0; i < MAX; i++)
         printf("sieve[%d]\t\t\tprime:\t%d;\tnumber:\t%d\n", i, *(sieve + i),
@@ -44,9 +44,9 @@ int main(void) {
     return 0;
 }
 
-void array(int *isprime, int i, int j) {
+void isprime(bool *sieve, int i, int j) {
     while (i + j < MAX) {
         i += j;
-        *(isprime + i) = false;
+        *(sieve + i) = false;
     }
 }
