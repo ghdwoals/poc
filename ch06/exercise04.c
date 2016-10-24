@@ -13,14 +13,14 @@
 void array(int *isprime, int i, int j);
 
 int main(void) {
-    int isprime[MAX];
+    int sieve[MAX];
     int numbers[MAX];
     int i;
     int j;
     int primes = 0;
 
     for (i = 0; i < MAX; i++)
-        *(isprime + i) = true;
+        *(sieve + i) = true;
 
     // We start with the number 2.
     // This array only exists to show corresponding numbers.
@@ -28,14 +28,14 @@ int main(void) {
         *(numbers + i) = j;
 
     for (i = 0, j = 2; i < MAX; i++, j++)
-        array(isprime, i, j);
+        array(sieve, i, j);
 
     for (i = 0; i < MAX; i++)
-        printf("isprime[%d]\t\t\tprime:\t%d;\tnumber:\t%d\n", i, *(isprime + i),
+        printf("sieve[%d]\t\t\tprime:\t%d;\tnumber:\t%d\n", i, *(sieve + i),
             *(numbers + i));
 
     for (i = 0; i < MAX; i++)
-        if (*(isprime + i) == true)
+        if (*(sieve + i) == true)
             primes++;
 
     printf("\n");
