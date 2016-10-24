@@ -2,7 +2,8 @@
 ** Using the Sieve of Eratosthenes, write a program and algorithm for the
 **  computation of prime numbers. The first step of the algorithm is to write
 **  down all the numbers from two to some upper limit. In the rest of the
-**  algorithm, you go through the list and cross out numbers that are not prime.*/
+**  algorithm, you go through the list and cross out numbers that are not prime.
+*/
 
 #include <stdio.h>
 #include <stdbool.h>
