@@ -13,7 +13,7 @@
 int gcd(int m, int n) {
     if (m <= 0 || n <= 0)
         return 0;
-    if (m % n = 0)
+    if (m % n == 0)
         return n;
     if (m % n > 0)
         return gcd(n, m % n);
