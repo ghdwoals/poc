@@ -15,7 +15,7 @@ char *find_char(char const *source, char const *chars);
 **
 ** Example: suppose source points to ABCDEFG. If chars points to XYZ, JURY, or
 **  QQQQ, the function should return NULL. If chars points to XRCQEF, the
-**  function should return a pointer to the c character in the source string.
+**  function should return a pointer to the 'C' character in the source string.
 **  The strings that the arguments point to are never modified.
 **
 ** Do not use any library string routines.
