@@ -11,22 +11,21 @@
  * indicating whether the matrix is an identity matrix.
  */
 
+#include <stdbool.h>
+
 int identity_matrix(int arr[10][10]) {
     int row, col;
-    int is_identity_matrix = 0;
 
     for (row = 0; row < 10; row++) {
         for (col = 0; col < 10; col++) {
             if (row != col)
                 continue;
             else {
-                if (arr[row][col] == 1)
-                    is_identity_matrix = 1;
-                else
-                    is_identity_matrix = 0;
+                if (arr[row][col] != 1)
+                    return false;
             }
         }
     }
 
-    return is_identity_matrix;
+    return true;
 }
