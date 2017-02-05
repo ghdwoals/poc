@@ -9,18 +9,10 @@
 int identity_matrix(int *matrix, int size) {
     int row, col;
 
-    for (row = 0; row < size; row++) {
-        for (col = 0; col < size; col++) {
-            if (row != col)
-                ;
-            else {
-                if (*matrix != 1)
-                    return false;
-            }
-
-            *matrix++;
-        }
-    }
+    for (row = 0; row < size; row++)
+        for (col = 0; col < size; col++)
+            if (*matrix++ != (row == col))
+                return false;
 
     return true;
 }

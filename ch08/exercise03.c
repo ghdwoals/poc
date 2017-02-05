@@ -16,16 +16,10 @@
 int identity_matrix(int arr[10][10]) {
     int row, col;
 
-    for (row = 0; row < 10; row++) {
-        for (col = 0; col < 10; col++) {
-            if (row != col)
-                continue;
-            else {
-                if (arr[row][col] != 1)
-                    return false;
-            }
-        }
-    }
+    for (row = 0; row < 10; row++)
+        for (col = 0; col < 10; col++)
+            if (arr[row][col] != (row == col))
+                return false;
 
     return true;
 }
