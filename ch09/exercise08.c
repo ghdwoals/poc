@@ -13,13 +13,6 @@
 char *my_strnchr(char const *str, int ch, int which) {
     char *location = NULL;
     char *latest = strchr(str, ch);
-    int count;
-
-    for (count = 0; *str != '\0'; str++)
-        if (*str == ch)
-            count++;
-    if (count < which)
-        return NULL;
 
     while (latest != NULL && --which >= 0) {
         location = latest++;
