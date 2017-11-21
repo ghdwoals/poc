@@ -5,7 +5,7 @@
  */
 
 int my_strnlen(char *string, int size) {
-    unsigned int i;
+    int i;
 
     for (i = 0; i < size; i++)
         if (*string++ == '\0')
